@@ -14,10 +14,16 @@ module.exports = {
     path: path.resolve(__dirname, "public"),
     filename: "main.js",
     clean: true,
+    assetModuleFilename: "images/[hash][ext][query]",
   },
   devtool: "inline-source-map",
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      pages: path.resolve(__dirname, "src/pages/"),
+      components: path.resolve(__dirname, "src/components/"),
+      images: path.resolve(__dirname, "src/images/"),
+    },
   },
   module: {
     rules: [
@@ -29,6 +35,22 @@ module.exports = {
         test: /\.ts?x$/,
         use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g)$/,
+        type: "asset/resource",
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              icon: true,
+            },
+          },
+        ],
       },
     ],
   },

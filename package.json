@@ -17,6 +17,7 @@
   "author": "Mokhtar Hamdoune",
   "license": "ISC",
   "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
@@ -34,9 +35,13 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "@styled-icons/fluentui-system-filled": "^10.35.0",
+    "@styled-icons/fluentui-system-regular": "^10.35.0",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6",
+    "styled-components": "^5.3.5"
   }
 }
