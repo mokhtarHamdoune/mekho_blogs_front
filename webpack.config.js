@@ -9,12 +9,14 @@ module.exports = {
   devServer: {
     static: "./public",
     port: 3000,
+    historyApiFallback: true, //fallback to index.html
   },
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "main.js",
     clean: true,
     assetModuleFilename: "images/[hash][ext][query]",
+    publicPath: "/", //tell html to always access main.js from / folder
   },
   devtool: "inline-source-map",
   resolve: {
@@ -23,6 +25,7 @@ module.exports = {
       pages: path.resolve(__dirname, "src/pages/"),
       components: path.resolve(__dirname, "src/components/"),
       images: path.resolve(__dirname, "src/images/"),
+      utils: path.resolve(__dirname, "src/utils/"),
     },
   },
   module: {
@@ -32,7 +35,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
-        test: /\.ts?x$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
@@ -59,6 +62,6 @@ module.exports = {
       title: "Mekho Blogs",
       template: path.resolve(__dirname, "public/index.html"),
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({}),
   ],
 };

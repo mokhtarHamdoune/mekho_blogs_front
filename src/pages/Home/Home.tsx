@@ -1,7 +1,11 @@
 import React from "react";
-import Header from "components/Header/Header";
+import HomeIntro from "components/HomeIntro/HomeIntro";
 const Home = () => {
-  return <Header />;
+  return (
+    <>
+      <HomeIntro />
+    </>
+  );
 };
 
 export default Home;

@@ -37,11 +37,13 @@
   "dependencies": {
     "@styled-icons/fluentui-system-filled": "^10.35.0",
     "@styled-icons/fluentui-system-regular": "^10.35.0",
+    "formik": "^2.2.9",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "yup": "^0.32.11"
   }
 }
