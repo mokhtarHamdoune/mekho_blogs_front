@@ -5,6 +5,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily:{
+	popins:["Poppins","sans-serif"]
+      },
       colors: {
         primary: colors.orange[400],
         default: colors.gray[400],
